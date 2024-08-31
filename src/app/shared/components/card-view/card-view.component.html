@@ -1,0 +1,19 @@
+<div class="card" (click)="handleClick($event, idProduct)">
+    <div class="image-container">
+      <img [src]="productImage" alt="{{ productName }}">
+      <div *ngIf="hasDiscount" class="discount">{{ discountPercentage }}% OFF</div>
+    </div>
+    <div class="content">
+      <h3 class="title">{{ productName }}</h3>
+      <p class="description">{{ productDescription }}</p>
+      <div class="price-container">
+        <span class="price">{{ discountedPrice | currency:'USD':'symbol':'1.0-0' }}</span>
+        <span *ngIf="hasDiscount" class="original-price">{{ productPrice | currency:'USD':'symbol':'1.0-0' }}</span>
+      </div>
+      <div class="containerButton">
+        <button class="add-to-cart" >
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+      </div>
+    </div>
+</div>

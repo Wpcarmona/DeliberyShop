@@ -1,0 +1,56 @@
+
+<main class="main">
+  <div class="content">
+    <div>
+      <app-popup [isVisible]="isPopupVisible" (close)="hidePopup()">
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <h2>Product Details</h2>
+        <p>ID: {{ popupProductId }}</p>
+        <!-- Agrega más contenido aquí si es necesario -->
+      </app-popup>
+    </div>
+    <div class="cards-container">
+      <app-card-view
+        *ngFor="let product of products"
+        [idProduct]="product.name"
+        [productName]="product.name"
+        [productDescription]="product.description"
+        [productImage]="product.image"
+        [productPrice]="product.price"
+        [discountPercentage]="product.discountPercentage"
+        [hasDiscount]="product.hasDiscount"
+        (openPopup)="showPopup($event)"
+        >
+      </app-card-view>
+    </div>
+  </div>
+</main>
+
+<router-outlet />
